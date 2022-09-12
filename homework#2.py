@@ -34,17 +34,49 @@
 # Как я понял, последовательность должна увеличиваться? 
 # Если задаем n = 4, то в формуле n = 1, затем  n = 2 и т.д.?
 
-print()
-n = int(input('Введите число N: '))
-list = []
-for i in range(0, n):
-    list.append(round((1 + 1/(i+1))**(i+1), 3))
+# print()
+# n = int(input('Введите число N: '))
+# list = []
+# for i in range(0, n):
+#     list.append(round((1 + 1/(i+1))**(i+1), 3))
 
-sum = 0
-for j in range(len(list)):
-    sum += list[j]
+# sum = 0
+# for j in range(len(list)):
+#     sum += list[j]
 
-print(f'Спиисок из {n} чисел последовательности (1 + 1/n)**n : ')
+# print(f'Спиисок из {n} чисел последовательности (1 + 1/n)**n : ')
+# print(list)
+# print(f'Сумма элементов в списке: {round(sum, 2)}')
+# print()
+
+# 5. Реализуйте алгоритм перемешивания списка.
+
+#вариант1:
+import random 
+
+list = [1, 2, 3, 4, 5, 6] 
 print(list)
-print(f'Сумма элементов в списке: {round(sum, 2)}')
-print()
+ 
+random.shuffle(list) 
+print(list)
+
+#вариант2:
+import random
+list = [1, 2, 3, 4, 5, 6] 
+print(list)
+
+for i in range(len(list)):
+    list[i] = random.choice(list)
+print(list)
+
+#вариант3:
+import random
+list = [1, 2, 3, 4, 5, 6] 
+print(list)
+
+temp = None
+for i in range((len(list)) // 2):
+    temp = list[i]
+    list[i] = list[len(list)-(i+1)]
+    list[len(list)-(i+1)] = temp
+print(list)
