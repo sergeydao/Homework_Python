@@ -2,13 +2,30 @@
 # 6782 -> 23
 # 0,56 -> 11
 
-number = input('Введите число: ')
-sum = 0
-number2 = number
+# number = input('Введите число: ')
+# sum = 0
+# number2 = number
 
-sum = 0
-for i in number:
-    # if i != ".":
-    if i.isdigit():
-        sum += int(i)
-print(f'Сумма цифр в числе {number2} = {sum}')
+# sum = 0
+# for i in number:
+#     if i != ".":
+#     if i.isdigit():
+#         sum += int(i)
+# print(f'Сумма цифр в числе {number2} = {sum}')
+
+# 1. Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
+# *Пример:*
+# пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1**2, 1**2**3, 1**2**3**4)
+
+print('\n')
+
+n = int(input('Введите число N: '))
+
+print(f'Набор произведений чисел от 1 до {n}:')
+for i in range(1, n+1):
+    sum = 1
+    for j in range(1, i+1):
+        sum *= j
+    print(sum, end=', ')
+
+print('\n')
