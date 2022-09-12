@@ -17,15 +17,34 @@
 # *Пример:*
 # пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1**2, 1**2**3, 1**2**3**4)
 
-print('\n')
+# print('\n')
 
+# n = int(input('Введите число N: '))
+
+# print(f'Набор произведений чисел от 1 до {n}:')
+# for i in range(1, n+1):
+#     sum = 1
+#     for j in range(1, i+1):
+#         sum *= j
+#     print(sum, end=', ')
+
+# print('\n')
+
+# Задайте список из n чисел последовательности (1 + 1/n)**n и выведите на экран их сумму.
+# Как я понял, последовательность должна увеличиваться? 
+# Если задаем n = 4, то в формуле n = 1, затем  n = 2 и т.д.?
+
+print()
 n = int(input('Введите число N: '))
+list = []
+for i in range(0, n):
+    list.append(round((1 + 1/(i+1))**(i+1), 3))
 
-print(f'Набор произведений чисел от 1 до {n}:')
-for i in range(1, n+1):
-    sum = 1
-    for j in range(1, i+1):
-        sum *= j
-    print(sum, end=', ')
+sum = 0
+for j in range(len(list)):
+    sum += list[j]
 
-print('\n')
+print(f'Спиисок из {n} чисел последовательности (1 + 1/n)**n : ')
+print(list)
+print(f'Сумма элементов в списке: {round(sum, 2)}')
+print()
