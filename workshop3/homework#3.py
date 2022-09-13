@@ -58,12 +58,39 @@
 # 3 -> 11
 # 2 -> 10
 
-decimal_number = int(input(f'Введите десятичное число для преобразования в двоичное: '))
-origin_decimal_number = decimal_number
-binary_number = ''
+# decimal_number = int(input(f'Введите десятичное число для преобразования в двоичное: '))
+# origin_decimal_number = decimal_number
+# binary_number = ''
  
-while decimal_number > 0:
-    binary_number = str(decimal_number % 2) + binary_number
-    decimal_number //= 2
+# while decimal_number > 0:
+#     binary_number = str(decimal_number % 2) + binary_number
+#     decimal_number //= 2
  
-print(f'{origin_decimal_number} в двоичной системе исчисления: {binary_number}')
+# print(f'{origin_decimal_number} в двоичной системе исчисления: {binary_number}')
+
+# 5. Задайте число. Составьте список чисел Фибоначчи, в том числе для отрицательных индексов.
+
+# Пример:
+# для k = 8 список будет выглядеть так: [-21 ,13, -8, 5, −3, 2, −1, 1, 0, 1, 1, 2, 3, 5, 8, 13, 21]
+
+def fib(n):
+    if n <= 0:
+        # if n == -2:
+        #     return -1
+        # elif n == -1:
+        #     return 1
+        # elif n == 0:
+        #     return 0
+        # else:
+        return fib(n+2) - fib(n+1)
+    if n > 0:
+        if n in [1, 2]:
+            return 1
+        else:
+            return fib(n-1) + fib(n-2)
+    
+n = int(input('Введите целое число: '))
+list = []
+for e in range(-n, n+1):
+    list.append(fib(e))
+print(list)
