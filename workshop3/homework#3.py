@@ -17,13 +17,36 @@
 # [2, 3, 4, 5, 6] => [12, 15, 16];
 # [2, 3, 5, 6] => [12, 15]
 
-list = [2, 3, 4, 5, 6]
-result = []
-maxIndex = len(list) - 1
+# list = [2, 3, 4, 5, 6]
+# result = []
+# maxIndex = len(list) - 1
 
-for i in range(len(list) // 2):
-    result.append(list[i] * list[maxIndex])
-    maxIndex -= 1
-if len(list) % 2 == 1:
-    result.append(list[len(list) // 2]**2)
-print(result)
+# for i in range(len(list) // 2):
+#     result.append(list[i] * list[maxIndex])
+#     maxIndex -= 1
+# if len(list) % 2 == 1:
+#     result.append(list[len(list) // 2]**2)
+# print(result)
+
+# 3. Задайте список из вещественных чисел. 
+# Напишите программу, которая найдёт разницу между максимальным и минимальным значением дробной части элементов.
+
+# Пример: [1.1, 1.2, 3.1, 5, 10.01] => 0.19
+
+list = [1.1, 1.2, 3.1, 5.0, 10.01]
+result = []
+
+for i in range(len(list)):
+    if i != 0:
+        result.append(round(list[i] % 1, 2))
+
+# print(max(result) - min(result))
+
+max = result[0]
+min = result[0]
+for j in range(len(result)):
+    if result[j] < min:
+        min = result[j]
+    elif result[j] > max:
+        max = result[j]
+print(f'Разница между {max} и {min} = {max - min}')
