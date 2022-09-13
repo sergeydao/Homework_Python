@@ -33,20 +33,37 @@
 
 # Пример: [1.1, 1.2, 3.1, 5, 10.01] => 0.19
 
-list = [1.1, 1.2, 3.1, 5.0, 10.01]
-result = []
+# list = [1.1, 1.2, 3.1, 5.0, 10.01]
+# result = []
 
-for i in range(len(list)):
-    if i != 0:
-        result.append(round(list[i] % 1, 2))
+# for i in range(len(list)):
+#     if i != 0:
+#         result.append(round(list[i] % 1, 2))
 
 # print(max(result) - min(result))
 
-max = result[0]
-min = result[0]
-for j in range(len(result)):
-    if result[j] < min:
-        min = result[j]
-    elif result[j] > max:
-        max = result[j]
-print(f'Разница между {max} и {min} = {max - min}')
+# max = result[0]
+# min = result[0]
+# for j in range(len(result)):
+#     if result[j] < min:
+#         min = result[j]
+#     elif result[j] > max:
+#         max = result[j]
+# print(f'Разница между {max} и {min} = {max - min}')
+
+# 4. Напишите программу, которая будет преобразовывать десятичное число в двоичное.
+
+# Пример:
+# 45 -> 101101
+# 3 -> 11
+# 2 -> 10
+
+decimal_number = int(input(f'Введите десятичное число для преобразования в двоичное: '))
+origin_decimal_number = decimal_number
+binary_number = ''
+ 
+while decimal_number > 0:
+    binary_number = str(decimal_number % 2) + binary_number
+    decimal_number //= 2
+ 
+print(f'{origin_decimal_number} в двоичной системе исчисления: {binary_number}')
